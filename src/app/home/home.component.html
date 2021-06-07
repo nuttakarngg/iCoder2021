@@ -1,4 +1,4 @@
-<!-- <div class="action-bar">
+<div class="action-bar">
   <app-action-bar
     [step]="1"
     [min]="0"
@@ -31,26 +31,4 @@
     <button (click)="actionBarNumber2 = 300;sumResult();">Chang number 2 to 300</button>
     <button (click)="actionBarNumber3 = 500;sumResult();">Chang number 3 to 500</button>
   </div>
-</div>
-
-<hr>
-
-<div style="margin-top:30px;">
-  <span class="p-float-label">
-    <input id="float-input" type="text" pInputText>
-    <label for="float-input">Username</label>
-  </span>
-  <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
-</div> -->
-
-
-<div class="container">
-  <header class="container-header">
-   <span [routerLink]="['home']">Home</span>
-   <span [routerLink]="['student']">Student</span>
-   <span [routerLink]="['add']">AddStudent</span>
-  </header>
-  <main class="container-main"
-  ><router-outlet></router-outlet></main>
-
 </div>

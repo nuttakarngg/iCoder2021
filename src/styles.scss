@@ -1,1 +1,18 @@
 /* You can add global styles to this file, and also import other style files */
+.container {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  height: 100vh;
+  row-gap: 0.5em;
+}
+
+.container-header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 0.5em;
+}
+
+.container-main{
+
+}
