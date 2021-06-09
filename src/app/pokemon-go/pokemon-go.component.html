@@ -1,0 +1,30 @@
+<!-- <p-dropdown
+  [options]="cities"
+  [formControl]="cityFromControl"
+  placeholder="Select a City"
+  optionLabel="name"
+  [showClear]="true"
+></p-dropdown>
+{{ cityFromControl.value | json }}
+<hr /> -->
+
+<p-dropdown
+  [options]="pokemonDataList"
+  placeholder="Select a Pokemon"
+  optionLabel="name"
+  (onChange)="selectPokemon($event)"
+  [showClear]="true"
+></p-dropdown>
+<div class="img-container">
+  <span *ngFor="let sprite of sprites">
+    <img
+      #pokemonImage
+      [src]="sprite"
+      style="height: 100%; width: auto; margin: 0 auto; cursor: pointer"
+      alt="รูปโปเกม่อน"
+    />
+  </span>
+  <div *ngFor="let abi of abilities">
+    <div>{{ abi }}</div>
+  </div>
+</div>

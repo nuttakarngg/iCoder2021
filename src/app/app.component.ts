@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
+import { MessageService } from 'primeng/api';
+import { Student } from './student';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
+  providers: [MessageService],
 })
-export class AppComponent implements OnInit{
-  ngOnInit(){
-    this.sumResult()
+export class AppComponent implements OnInit {
+  editStudent:Student|null = null;
+  fiveBathList = [4, 10, 8, 20, 50];
+  oneBathList: number[] = [];
+  summary: number = 0;
+  ngOnInit() {}
+  transform5BathToBath() {
+    this.oneBathList = this.fiveBathList.map((num) => num * 5);
   }
-  title = 'iCoder2021';
-  result:number = 0;
-  actionBarNumber1:number = 5;
-  actionBarNumber2:number = 10;
-  actionBarNumber3:number = 50;
-
-  sumResult(){
-    this.result = this.actionBarNumber1+this.actionBarNumber2+this.actionBarNumber3;
+  sum() {
+    this.summary = this.fiveBathList.reduce((sum, num) => sum + num * 5, 0);
   }
-
 }

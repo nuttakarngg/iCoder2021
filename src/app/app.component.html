@@ -42,16 +42,22 @@
   </span>
   <button pButton pRipple type="button" icon="pi pi-search" class="p-button-rounded p-button-success"></button>
 </div> -->
-
-
+<p-toast></p-toast>
 <div class="container">
   <header class="container-header">
-   <span [routerLink]="['home']">Home</span>
-   <span [routerLink]="['student']">Student</span>
-   <span [routerLink]="['add']">AddStudent</span>
+    <span [routerLink]="['home']">Home</span>
+    <span [routerLink]="['student']">Student</span>
+    <span [routerLink]="['add']">AddStudent</span>
+    <span [routerLink]="['pokemon']">Pokemon</span>
+    <span [routerLink]="['pokemon-go']">PokemonGo</span>
   </header>
-  <main class="container-main"
-  Hello World
-  ><router-outlet></router-outlet></main>
-
+  <main class="container-main">
+    <!-- <p-button icon="pi pi-settings" label="Calculate" (onClick)="transform5BathToBath();"></p-button>
+    <p-button icon="pi pi-settings" label="Sum" (onClick)="sum();"></p-button>
+    เหรียญห้าบาท {{fiveBathList | json}}
+    เหรียญบาท {{oneBathList | json}}
+    ผลรวม {{summary}} -->
+    <!-- Hello World -->
+    <router-outlet></router-outlet>
+  </main>
 </div>

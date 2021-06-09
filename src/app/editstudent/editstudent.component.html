@@ -1,5 +1,4 @@
-
-<div class="addStudentFormGroup" [formGroup]="addStudentFormGroup">
+<div class="addStudentFormGroup" [formGroup]="editStudentFormGroup">
   <div>
     <span> ชื่อ : </span>
     <input type="text" pInputText name="" id="" formControlName="name" />
@@ -45,10 +44,14 @@
     <p-button
       label="บันทึก"
       (onClick)="saveStudent()"
-      [disabled]="addStudentFormGroup.invalid"
+      [disabled]="editStudentFormGroup.invalid"
     ></p-button>
-    <p-button label="ล้างค่า" (click)="addStudentFormGroup.reset()"></p-button>
+    <p-button label="ล้างค่า" (click)="editStudentFormGroup.reset()"></p-button>
     <p-button label="ย้อนกลับ" [routerLink]="['/student']"></p-button>
   </div>
-  {{ addStudentFormGroup.invalid }}
+  <div>
+    <span>createDate:</span>
+    <p-calendar [showIcon]="true" inputId='icon'></p-calendar>
+  </div>
+
 </div>

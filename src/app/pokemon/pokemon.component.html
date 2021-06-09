@@ -1,0 +1,46 @@
+<div class="img-container">
+  <span *ngFor="let sprite of sprites">
+    <img
+      #pokemonImage
+      [src]="sprite"
+      style="height: 100%; width: auto; margin: 0 auto;cursor: pointer;"
+      alt="รูปโปเกม่อน"
+      (click)="movement(pokemonImage)"
+    />
+  </span>
+</div>
+<!-- <div *ngFor="demo" -->
+<div>
+  <p-table
+    class="table"
+    [value]="pokemonDataList"
+    [paginator]="true"
+    [rows]="10"
+    [showCurrentPageReport]="true"
+  >
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Name</th>
+        <th>Url</th>
+
+        <th></th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-pokemon>
+      <tr>
+        <td>{{ pokemon.name }}</td>
+        <td>
+          <a [href]="pokemon.url">{{ pokemon.url }}</a>
+        </td>
+
+        <td class="control-button-table">
+          <p-button
+            icon="pi pi-search"
+            label="show"
+            (click)="showPokemon(pokemon)"
+          ></p-button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
