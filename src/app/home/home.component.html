@@ -23,12 +23,30 @@
     (numberChange)="sumResult()"
   ></app-action-bar>
 
-  <div class="sum-result">
-    รวมแล้วได้ {{ result }}
-  </div>
+  <div class="sum-result">รวมแล้วได้ {{ result }}</div>
   <div class="btn-action-group">
-    <button (click)="actionBarNumber1 = 100;sumResult();">Chang number 1 to 100</button>
-    <button (click)="actionBarNumber2 = 300;sumResult();">Chang number 2 to 300</button>
-    <button (click)="actionBarNumber3 = 500;sumResult();">Chang number 3 to 500</button>
+    <button (click)="actionBarNumber1 = 100; sumResult()">
+      Chang number 1 to 100
+    </button>
+    <button (click)="actionBarNumber2 = 300; sumResult()">
+      Chang number 2 to 300
+    </button>
+    <button (click)="actionBarNumber3 = 500; sumResult()">
+      Chang number 3 to 500
+    </button>
   </div>
 </div>
+<div *ngFor="let student of students">
+  <span style="padding: 20px">{{ student.name }}</span>
+  <span>{{ student.status | status }} </span>
+</div>
+
+{{ Date | date: "long" }}
+{{ 100000 | currency }}
+{{ 120050 | number: "1.2" }}
+
+<div>
+  <input type="text" pInputText [formControl]="pokemonFormControl" />
+</div>
+
+{{ pokemon$ | async | json }}

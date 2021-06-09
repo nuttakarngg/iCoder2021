@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Pokemon, PokemonData, PokemonResponse, Sprites } from '../pokemon';
+import { PokemonService } from '../pokemon.service';
 
 @Component({
   selector: 'app-pokemon',
@@ -12,20 +13,16 @@ export class PokemonComponent implements OnInit {
   pokemonDataList: PokemonData[] = [];
   sprites: string[] | null = [];
 
-
-  constructor(private http: HttpClient) {
-    this.http
-      .get<any>('https://pokeapi.co/api/v2/pokemon/pikachu')
-      .subscribe((response) => {
-        this.pokemonUrl = response.sprites.front_shiny;
-      });
-    this.http
-      .get<PokemonResponse>(
-        'https://pokeapi.co/api/v2/pokemon?offset=100&limit=200'
-      )
-      .subscribe((response) => {
-        this.pokemonDataList = response.results;
-      });
+  constructor(
+    private http: HttpClient,
+    private pokemonService: PokemonService
+  ) {
+    pokemonService.getPokemonByName('pikuchu').subscribe((response) => {
+      this.pokemonUrl = response.sprites.front_shiny;
+    });
+    pokemonService.getPokemonAll().subscribe((response) => {
+      this.pokemonDataList = response.results;
+    });
   }
 
   ngOnInit(): void {}
@@ -44,8 +41,6 @@ export class PokemonComponent implements OnInit {
         .filter((key) => key.startsWith('back') || key.startsWith('front'))
         .filter((sprites) => (response.sprites as any)[sprites] !== null)
         .map((sprites) => (response.sprites as any)[sprites]);
-
     });
-
   }
 }
