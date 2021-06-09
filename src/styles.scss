@@ -6,13 +6,48 @@
   row-gap: 0.5em;
 }
 
-.container-header{
+.container-header {
   display: flex;
   align-items: center;
   justify-content: center;
   column-gap: 0.5em;
 }
 
-.container-main{
+.query-container {
+  display: flex;
+  place-content: center;
+  grid-row-gap: 0.5em;
+  column-gap: 0.5em;
+  padding: 0.5em;
+}
 
+.add-container {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.table {
+  padding: 0.5em;
+}
+
+td.control-button-table {
+  display: flex;
+  justify-content: flex-end;
+}
+.img-container {
+  display: flex;
+  height: 200px;
+  justify-content: center;
+}
+
+.addStudentFormGroup {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 0.5em;
+}
+
+th.p-button-table{
+  width:10%;
 }
